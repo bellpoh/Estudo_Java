@@ -10,8 +10,13 @@ public class Estudo {
                 "2- Palindromo\n" +
                 "3- Tabuada de Multiplicação\n" +
                 "4- Contador de Palavra\n" +
-                "5- Area do circulo\n" +
-                "6- Ordem crescente\n" );
+                "5- Area do Circulo\n" +
+                "6- Ordem Crescente\n" +
+                "7- Maior Deles\n" +
+                "8- Contar Vogais\n" +
+                "9- FizzBuzz\n" +
+                "10- Inverter Palavra\n" +
+                "11- Soma dos Números\n");
         opcao = scanner.nextByte();
 
         switch(opcao){
@@ -77,7 +82,7 @@ public class Estudo {
                 break;
 
             case 5:
-                System.out.println("==== Area do circulo ====");
+                System.out.println("==== Area do Circulo ====");
                 double raio;
 
                 System.out.println("Digite o valor do raio:");
@@ -90,7 +95,7 @@ public class Estudo {
                 break;
 
             case 6:
-                System.out.println("==== Ordem crescente ==== ");
+                System.out.println("==== Ordem Crescente ==== ");
                 int a, b, c;
 
                 System.out.println("Digite o primeiro número:");
@@ -119,6 +124,109 @@ public class Estudo {
                         System.out.println("Fica: " + c + ", " + b +", " + a);
                     }
                 }
+                break;
+
+            case 7:
+                System.out.println("==== Maior Deles ==== ");
+                int n1;
+                int n2;
+                int n3;
+                int maior;
+                System.out.println("Digite o primeiro número:");
+                n1 = scanner.nextInt();
+                System.out.println("Digite o segundo número:");
+                n2 = scanner.nextInt();
+                System.out.println("Digite o terceiro número:");
+                n3 = scanner.nextInt();
+
+                maior = n1;
+                if(n2 > maior){
+                    maior = n2;
+                }
+                if(n3 > maior){
+                    maior = n3;
+                }
+
+                System.out.println("O maior número é: " + maior);
+
+                break;
+
+            case 8:
+                System.out.println("==== Contar Vogais ==== ");
+                scanner.nextLine();
+                String palavrab;
+                int contador = 0;
+                System.out.println("Digite uma palavra:");
+                palavrab = scanner.nextLine();
+
+
+                for(int i = 0; i < palavrab.length(); i++){
+                    char l = palavrab.charAt(i);
+                    if(l == 'a' || l == 'e' || l == 'i' ||
+                            l == 'o' || l == 'u'){
+                        contador++;
+                    }
+                }
+                System.out.println("Quantidade de vogais: " + contador);
+                break;
+
+            case 9:
+                System.out.println("==== FizzBuzz ==== ");
+
+                for(int i = 1; i <= 30; i++){
+
+                    if(i % 3 == 0 && i % 5 == 0){
+                        System.out.println("FizzBuzz");
+                    }
+                    else if(i % 3 == 0){
+                        System.out.println("Fizz");
+                    }
+                    else if(i % 5 == 0){
+                        System.out.println("Buzz");
+                    }
+                    else{
+                        System.out.println(i);
+                    }
+
+                }
+                break;
+
+            case 10:
+                System.out.println("==== Inverter Palavra ==== ");
+
+                System.out.println("Digite uma palavra:");
+                String pala = scanner.next();
+
+                String inverter = "";
+
+                for(int i = pala.length() - 1; i >= 0; i--){
+                    inverter += pala.charAt(i);
+                }
+
+                System.out.println("Palavra invertida: " + inverter);
+
+                break;
+
+            case 11:
+                System.out.println("==== Soma dos Números ==== ");
+
+                int num1;
+                int num2;
+                int num3;
+                int soma;
+
+                System.out.println("Digite o primeiro número:");
+                num1 = scanner.nextInt();
+
+                System.out.println("Digite o segundo número:");
+                num2 = scanner.nextInt();
+
+                System.out.println("Digite o terceiro número:");
+                num3 = scanner.nextInt();
+
+                soma = num1 + num2 + num3;
+
+                System.out.println("A soma dos números é: " + soma);
                 break;
 
             default:
